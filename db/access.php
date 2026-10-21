@@ -50,6 +50,22 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
+
+    // Standard capability every activity module must declare (Moodle 2.4+): who may add
+    // an instance to a course. Without it the single-activity course format logs
+    // "Capability mod/pathfinder:addinstance was not found" on every view, and the
+    // activity cannot be offered in the activity chooser. The template block below
+    // has carried a commented-out copy since 2023; this is the live one.
+    'mod/pathfinder:addinstance' => array(
+        'riskbitmask' => RISK_XSS,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW,
+        ),
+        'clonepermissionsfrom' => 'moodle/course:manageactivities',
+    ),
 /***************************** remove these comment marks and modify the code as needed
 
 	'mod/pathfinder:addinstance' => array(
