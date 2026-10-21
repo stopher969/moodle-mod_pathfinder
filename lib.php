@@ -68,7 +68,7 @@ function pathfinder_supports($feature) {
  * @param mod_pathfinder_mod_form $mform
  * @return int The id of the newly inserted pathfinder record
  */
-function pathfinder_add_instance(stdClass $pathfinder, mod_pathfinder_mod_form $mform = null) {
+function pathfinder_add_instance(stdClass $pathfinder, ?mod_pathfinder_mod_form $mform = null) {
     global $DB;
 
     $pathfinder->timecreated = time();
@@ -89,7 +89,7 @@ function pathfinder_add_instance(stdClass $pathfinder, mod_pathfinder_mod_form $
  * @param mod_pathfinder_mod_form $mform
  * @return boolean Success/Fail
  */
-function pathfinder_update_instance(stdClass $pathfinder, mod_pathfinder_mod_form $mform = null) {
+function pathfinder_update_instance(stdClass $pathfinder, ?mod_pathfinder_mod_form $mform = null) {
     global $DB;
 
     $pathfinder->timemodified = time();
@@ -405,5 +405,5 @@ function pathfinder_extend_navigation(navigation_node $navref, stdclass $course,
  * @param settings_navigation $settingsnav {@link settings_navigation}
  * @param navigation_node $pathfindernode {@link navigation_node}
  */
-function pathfinder_extend_settings_navigation(settings_navigation $settingsnav, navigation_node $pathfindernode=null) {
+function pathfinder_extend_settings_navigation(settings_navigation $settingsnav, ?navigation_node $pathfindernode = null) {
 }
