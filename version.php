@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2026102100;      // The current module version (Date: YYYYMMDDXX).
 $plugin->requires  = 2022112800;      // Moodle 4.1 (Build: 20221128).
-$plugin->supported = [401, 405];      // Moodle 4.1 to 4.5.
+$plugin->supported = [401, 503];      // Moodle 4.1 to 4.5.
 $plugin->component = 'mod_pathfinder'; // To check on upgrade, that module sits in correct place.
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = '1.1.0';
